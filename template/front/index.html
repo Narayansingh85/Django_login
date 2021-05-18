@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static  'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>Login Page</title>
+
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="register"   method="POST">
+                {% csrf_token %}
+                <input type="text" name="first_name" placeholder="First Name" id="username">
+                <input type="text" name="last_name" placeholder="Last Name" id="username">
+                <input type="text" name="username" placeholder="Username" id="username">
+                <input type="password" name="password" placeholder="Password" id="password">
+                <input type="password" name="password2" placeholder="Confirm Password" id="password">
+                <input type="text" name="email" placeholder="Email" id="email">
+                <button class="button" name="register-form-button">Submit</button>
+                <p class="message"> Already Registered? <a href="#">Login</a></p>
+            </form>
+            <form class="login-form" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" id="username">
+                <input type="password" name="password" placeholder="Password" id="password">
+                
+                <button name="login-form-button">Login</button>
+                <p class="message">Not Registered? <a href="#">Register</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
